@@ -3,21 +3,25 @@
   "ignorePatterns": [
     "projects/**/*"
   ],
-  "env": {
-    "browser": true,
-    "node": true,
-    "jasmine": true
-  },
   "overrides": [
     {
       "files": [
         "*.ts"
       ],
+      "env": {
+        "browser": true,
+        "node": true
+      },
+      "parserOptions": {
+        "project": ["tsconfig.(app|spec).json"]
+      },
       "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:rxjs/recommended"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [
@@ -35,13 +39,26 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "rxjs/no-exposed-subjects": "error"
       }
+    },
+    {
+      "files": [
+        "*.spec.ts"
+      ],
+      "env": {
+        "jasmine": true
+      },
+      "extends": [
+        "plugin:jasmine/recommended"
+      ]
     },
     {
       "files": [
         "*.html"
       ],
+      "plugins": ["jasmine"],
       "extends": [
         "plugin:@angular-eslint/template/recommended",
         "plugin:@angular-eslint/template/accessibility"
