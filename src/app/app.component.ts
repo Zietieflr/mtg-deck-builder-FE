@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['../../node_modules/reset-css/reset.css', './app.component.scss']
 })
 export class AppComponent {
-  title = 'deck-builder';
+  public title = 'deck-builder';
 }
