@@ -40,7 +40,96 @@
             "style": "kebab-case"
           }
         ],
-        "rxjs/no-exposed-subjects": "error"
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        "@typescript-eslint/member-delimiter-style": [
+          "error",
+          {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+            },
+            "multilineDetection": "brackets"
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": {
+              "order": "natural-case-insensitive"
+            },
+            "classes": {
+              "memberTypes": [
+                "signature",
+                ["get", "set"],
+                "public-decorated-field",
+                "protected-decorated-field",
+                "private-decorated-field",
+                "public-field",
+                "protected-field",
+                "private-field",
+                "constructor",
+                "public-abstract-method",
+                "public-method",
+                "protected-abstract-method",
+                "protected-method",
+                "private-method"
+              ]
+            }
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "default",
+            "format": ["camelCase"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": [
+              "accessor",
+              "classProperty",
+              "objectLiteralProperty",
+              "parameter",
+              "parameterProperty",
+              "typeProperty",
+              "variable"
+            ],
+            "types": ["boolean"],
+            "format": ["PascalCase"],
+            "prefix": ["is", "has"]
+          },
+          {
+            "selector": "typeLike",
+            "format": ["PascalCase"]
+          },
+          {
+            "selector": "classProperty",
+            "modifiers": ["public", "readonly"],
+            "format": ["PascalCase"]
+          },
+          {
+            "selector": "enumMember",
+            "format": ["UPPER_CASE"]
+          }
+        ],
+        "@typescript-eslint/prefer-includes": "error",
+        "@typescript-eslint/prefer-nullish-coalescing": "error",
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "rxjs/no-exposed-subjects": "error",
+        "rxjs/suffix-subjects": [
+          "error",
+          {
+            "parameters": true,
+            "properties": true,
+            "suffix": "$",
+            "variables": true
+          }
+        ]
       }
     },
     {
