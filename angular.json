@@ -82,7 +82,8 @@
             "styles": ["src/styles.scss"],
             "scripts": [],
             "browsers": "ChromeHeadless",
-            "watch": true
+            "watch": true,
+            "codeCoverage": true
           }
         },
         "lint": {

@@ -7,8 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "ci:test": "ng test --watch false --progress false",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix && npx prettier --write --loglevel error .",
+    "ci:lint": "ng lint && npx prettier --check --loglevel error .",
     "prettier": "npx prettier --write ."
   },
   "private": true,
