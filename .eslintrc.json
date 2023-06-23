@@ -90,7 +90,6 @@
             "selector": [
               "accessor",
               "classProperty",
-              "objectLiteralProperty",
               "parameter",
               "parameterProperty",
               "typeProperty",
