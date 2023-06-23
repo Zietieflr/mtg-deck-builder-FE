@@ -9,7 +9,7 @@
     "test": "ng test",
     "ci:test": "ng test --watch false --progress false",
     "lint": "ng lint",
-    "lint:fix": "ng lint --fix && npx prettier --write --loglevel error .",
+    "lint:fix": "ng lint --fix && npx prettier --write --loglevel warn .",
     "ci:lint": "ng lint && npx prettier --check .",
     "prettier": "npx prettier --write ."
   },

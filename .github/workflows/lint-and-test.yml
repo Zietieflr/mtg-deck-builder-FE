@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: "20.x"
           cache: "npm"
-      - name: Cache dependencies 
+      - name: Cache dependencies
         id: deps
         uses: actions/checkout@v3
         env:

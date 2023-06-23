@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+# CI Pipeline
+~/.npm
+
 # IDEs and editors
 .idea/
 .project
