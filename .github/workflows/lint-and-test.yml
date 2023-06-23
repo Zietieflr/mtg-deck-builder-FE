@@ -6,11 +6,12 @@ on:
     branches: [main]
 jobs:
   build:
-    name: Configure environment and dependencies
+    name: Initialize and run
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
+      - name: Get repository
+        uses: actions/checkout@v3
+      - name: Initialize Node.js
         id: node-version
         uses: actions/setup-node@v3
         with:
