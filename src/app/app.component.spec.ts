@@ -1,5 +1,5 @@
-import { AppComponent } from "deck-builder/app.component";
 import { Spectator, createComponentFactory } from "@ngneat/spectator";
+import { AppComponent } from "deck-builder/app.component";
 
 describe("AppComponent", () => {
   let spectator: Spectator<AppComponent>;
