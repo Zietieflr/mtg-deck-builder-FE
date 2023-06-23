@@ -1,19 +1,14 @@
-import { TestBed } from "@angular/core/testing";
-import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from "deck-builder/app.component";
+import { Spectator, createComponentFactory } from "@ngneat/spectator";
 
 describe("AppComponent", () => {
-  beforeEach(() =>
-    TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent],
-    })
-  );
+  let spectator: Spectator<AppComponent>;
+
+  const createComponent = createComponentFactory(AppComponent);
+
+  beforeEach(() => (spectator = createComponent()));
 
   it("should create the app", () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-
-    expect(app).toBeTruthy();
+    expect(spectator.component).toBeInstanceOf(AppComponent);
   });
 });
