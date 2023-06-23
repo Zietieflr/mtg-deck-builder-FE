@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  build:
+  Lint-and-Test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,6 +14,21 @@ jobs:
         with:
           node-version: "20.x"
           cache: "npm"
+      - name: Cache dependencies 
+        id: deps
+        uses: actions/checkout@v3
+        env:
+          cache-name: cache-dependencies
+        with:
+          path: ~/.npm
+          key: npm-deps_${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pack-lock.json') }}
+          restore-keys: |
+            npm-deps_${{ runner.os }}-${{ env.cache-name }}-
+            npm-deps_${{ runner.os }}-
+      - if: ${{ steps.deps.outputs.cache-hit != 'true' }}
+        name: Could find cache, listing state of node modules
+        continue-on-error: true
+        run: npm list
       - name: Install
         run: npm ci
       - name: Lint and Format
