@@ -21,7 +21,7 @@ jobs:
           cache-name: cache-dependencies
         with:
           path: ~/.npm
-          key: npm-deps_${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/pack-lock.json') }}
+          key: npm-deps_${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             npm-deps_${{ runner.os }}-${{ env.cache-name }}-
             npm-deps_${{ runner.os }}-
