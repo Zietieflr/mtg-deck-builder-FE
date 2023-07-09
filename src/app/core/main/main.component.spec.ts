@@ -1,21 +1,16 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-
-import { MainComponent } from "./main.component";
+import { MainComponent } from "deck-builder/core/main/main.component";
+import { Spectator, createComponentFactory } from "@ngneat/spectator";
 
 describe("MainComponent", () => {
-  let component: MainComponent;
-  let fixture: ComponentFixture<MainComponent>;
+  let spectator: Spectator<MainComponent>;
+
+  const createComponent = createComponentFactory(MainComponent);
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [MainComponent],
-    });
-    fixture = TestBed.createComponent(MainComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
   });
 
   it("should create", () => {
-    expect(component).toBeTruthy();
+    expect(spectator.component).toBeInstanceOf(MainComponent);
   });
 });
