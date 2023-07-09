@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { MatCardModule } from "@angular/material/card";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatToolbarModule } from "@angular/material/toolbar";
@@ -9,7 +10,13 @@ import { RouterOutlet } from "@angular/router";
   templateUrl: "./app.component.html",
   styleUrls: ["../../node_modules/reset-css/reset.css", "./app.component.scss"],
   standalone: true,
-  imports: [MatIconModule, MatTabsModule, MatToolbarModule, RouterOutlet],
+  imports: [
+    MatCardModule,
+    MatIconModule,
+    MatTabsModule,
+    MatToolbarModule,
+    RouterOutlet,
+  ],
 })
 export class AppComponent {
   public title = "deck-builder";

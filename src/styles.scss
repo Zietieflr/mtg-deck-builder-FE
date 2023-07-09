@@ -7,9 +7,31 @@ html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  flex-grow: 0;
+}
+
+mat-tab-group {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.mat-mdc-tab-body-wrapper {
+  flex-grow: 1;
 }
 
 $dark-theme: mat.define-dark-theme(
