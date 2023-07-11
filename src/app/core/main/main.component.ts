@@ -4,7 +4,7 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatIconModule } from "@angular/material/icon";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { RouterOutlet } from "@angular/router";
+import { RouterModule } from "@angular/router";
 
 @Component({
   selector: "app-main",
@@ -15,7 +15,7 @@ import { RouterOutlet } from "@angular/router";
     MatIconModule,
     MatTabsModule,
     MatToolbarModule,
-    RouterOutlet,
+    RouterModule,
   ],
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.scss"],

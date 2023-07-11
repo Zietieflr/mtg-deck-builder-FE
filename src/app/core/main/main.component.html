@@ -16,9 +16,12 @@
   animationDuration="1000ms"
 >
   <a
+    #navLink="routerLinkActive"
     *ngFor="let route of routes"
     mat-tab-link
-    [active]="true"
+    routerLinkActive="active"
+    [routerLink]="[route.name]"
+    [active]="navLink.isActive"
   >
     {{ route.name | titlecase }}
     <mat-icon fontIcon="{{ route.icon }}"></mat-icon>
