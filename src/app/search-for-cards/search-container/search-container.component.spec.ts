@@ -1,21 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SearchContainerComponent } from './search-container.component';
+import { SearchContainerComponent } from "./search-container.component";
 
-describe('SearchContainerComponent', () => {
+describe("SearchContainerComponent", () => {
   let component: SearchContainerComponent;
   let fixture: ComponentFixture<SearchContainerComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SearchContainerComponent]
+      imports: [SearchContainerComponent],
     });
     fixture = TestBed.createComponent(SearchContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

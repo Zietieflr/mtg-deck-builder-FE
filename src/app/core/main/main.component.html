@@ -10,13 +10,17 @@
 
 <mat-divider></mat-divider>
 
-<nav 
+<nav
   mat-tab-nav-bar
   [tabPanel]="tabPanel"
   animationDuration="1000ms"
 >
-  <a *ngFor="let route of routes" mat-tab-link [active]="true">
-    {{ route.name| titlecase }}
+  <a
+    *ngFor="let route of routes"
+    mat-tab-link
+    [active]="true"
+  >
+    {{ route.name | titlecase }}
     <mat-icon fontIcon="{{ route.icon }}"></mat-icon>
   </a>
 </nav>
