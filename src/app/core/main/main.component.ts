@@ -1,14 +1,25 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatTabsModule } from "@angular/material/tabs";
+import { MatDividerModule } from "@angular/material/divider";
 import { MatIconModule } from "@angular/material/icon";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: "app-main",
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatTabsModule, MatToolbarModule],
+  imports: [
+    CommonModule,
+    MatDividerModule,
+    MatIconModule,
+    MatTabsModule,
+    MatToolbarModule,
+    RouterOutlet,
+  ],
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.scss"],
 })
-export class MainComponent {}
+export class MainComponent {
+  public routes = [{ name: "search", icon: "search" }];
+}

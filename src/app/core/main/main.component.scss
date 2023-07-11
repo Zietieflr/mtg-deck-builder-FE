@@ -2,9 +2,13 @@ header {
   flex-grow: 0;
 }
 
-mat-tab-group {
+mat-tab-nav-panel {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   overflow-y: scroll;
+}
+
+nav {
+  flex-grow: 0;
 }
