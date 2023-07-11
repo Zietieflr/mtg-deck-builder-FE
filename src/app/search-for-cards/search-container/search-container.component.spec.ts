@@ -1,21 +1,16 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-
-import { SearchContainerComponent } from "./search-container.component";
+import { Spectator, createComponentFactory } from "@ngneat/spectator";
+import { SearchContainerComponent } from "deck-builder/search-for-cards/search-container/search-container.component";
 
 describe("SearchContainerComponent", () => {
-  let component: SearchContainerComponent;
-  let fixture: ComponentFixture<SearchContainerComponent>;
+  let spectator: Spectator<SearchContainerComponent>;
+
+  const createComponent = createComponentFactory(SearchContainerComponent);
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [SearchContainerComponent],
-    });
-    fixture = TestBed.createComponent(SearchContainerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
   });
 
   it("should create", () => {
-    expect(component).toBeTruthy();
+    expect(spectator.component).toBeInstanceOf(SearchContainerComponent);
   });
 });
