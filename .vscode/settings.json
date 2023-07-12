@@ -1,5 +1,8 @@
 {
   "cSpell.words": [
     "ngneat"
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
 }

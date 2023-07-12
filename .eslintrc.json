@@ -11,8 +11,10 @@
       "parserOptions": {
         "project": ["tsconfig.(app|spec).json"]
       },
+      "plugins": ["import"],
       "extends": [
         "eslint:recommended",
+        "plugin:import/typescript",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@angular-eslint/recommended",
@@ -20,6 +22,19 @@
         "plugin:rxjs/recommended",
         "prettier"
       ],
+      "settings": {
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts"]
+        },
+        "import/resolver": {
+          "alias": true,
+          "typescript": {
+            "alwaysTryTypes": true,
+            "project": ["tsconfig.json"]
+          },
+          "node": { "extensions": [".ts"] }
+        }
+      },
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
@@ -124,6 +139,29 @@
             "properties": true,
             "suffix": "$",
             "variables": true
+          }
+        ],
+        "import/first": "error",
+        "import/order": [
+          "error",
+          {
+            "newlines-between": "never",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "import/newline-after-import": "error",
+        "eqeqeq": "error",
+        "sort-imports": [
+          "error",
+          {
+            "ignoreCase": false,
+            "ignoreDeclarationSort": true,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+            "allowSeparatedGroups": false
           }
         ]
       }
