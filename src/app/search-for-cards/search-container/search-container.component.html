@@ -1,1 +1,31 @@
-<p>search-container works!</p>
+<section>
+  <h2>
+    Search Scryfall
+  </h2>
+  <mat-form-field>
+    <mat-label>Search for cards</mat-label>
+    <input matInput />
+    <button
+      mat-icon-button
+      matSuffix
+      aria-label="Search for card(s)."
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+      <a
+        mat-icon-button
+        matSuffix
+        aria-label="Scryfall syntax guide link."
+        color="accent"
+        href="https://scryfall.com/docs/syntax"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <mat-icon>help_outline</mat-icon>
+      </a>
+  </mat-form-field>
+  <h3>Cards</h3>
+  <ul>
+    List of Cards or empty
+  </ul>
+</section>
